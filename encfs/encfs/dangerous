@@ -1,0 +1,38 @@
+#!/bin/bash
+
+OBJDUMP=i686-w64-mingw32-objdump
+
+filter() {
+	FN="$1"
+	LAST=
+	PRN=
+	while read LN; do
+		case "$LN" in
+		.libs/*)
+			LAST="$LN"
+			LAST=${LAST%%:*}
+			LAST=${LAST##.libs/}
+			;;
+		*\ $FN|*\ $FN@*)
+			case "$LN" in
+			*::*)
+				;;
+			*)
+				if [ "$LAST" != "$PRN" ]; then
+					echo "  $LAST"
+					PRN="$LAST"
+				fi
+				echo "    $LN"
+			esac
+			;;
+		esac
+	done
+}
+
+while read FN; do
+	FN=($FN)
+	FN=${FN%%@*}
+	echo
+	echo $FN
+	$OBJDUMP -tC .libs/*.o|filter "$FN" # grep -w $FN| grep -v ::
+done < ../../files_functions.txt
