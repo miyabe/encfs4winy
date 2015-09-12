@@ -212,31 +212,6 @@ Function .onInit
   IntOp $0 ${SF_SELECTED} | ${SF_RO}
   SectionSetFlags ${section_x86} $0
 
-  ; Windows Version check
-
-  ${If} ${RunningX64}
-    ${If} ${IsWin2008R2}
-    ${ElseIf} ${IsWin7}
-	${ElseIf} ${IsWin2012}
-	${ElseIf} ${IsWin8}
-	${ElseIf} ${IsWin2012R2}
-	${ElseIf} ${IsWin8.1}
-    ${Else}
-      MessageBox MB_OK "Your OS is not supported. Dokan library supports Windows 2008R2, 7, 2012, 8, 2012R2, 8.1 for x64."
-      Abort
-    ${EndIf}
-  ${Else}
-    ${If} ${IsWin2008R2}
-    ${ElseIf} ${IsWin7}
-	${ElseIf} ${IsWin2012}
-	${ElseIf} ${IsWin8}
-	${ElseIf} ${IsWin2012R2}
-	${ElseIf} ${IsWin8.1}
-    ${Else}
-      MessageBox MB_OK "Your OS is not supported. Dokan library supports Windows 2008R2, 7, 2012, 8, 2012R2, 8.1 for x86."
-      Abort
-    ${EndIf}
-  ${EndIf}
 FunctionEnd
 
 Function .onInstSuccess
