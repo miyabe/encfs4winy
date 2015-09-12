@@ -1,4 +1,4 @@
 *.crt
 *.pfx
 *.exe
-sign.bat
+sign*
