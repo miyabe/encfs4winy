@@ -86,7 +86,7 @@
       <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libeay32MD.lib;ssleay32MD.lib;rlog.lib;dokanfuse.lib;dokan.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libeay32MT.lib;ssleay32MT.lib;rlog.lib;dokanfuse.lib;dokan.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../../boost_1_59_0/stage/lib;C:/OpenSSL-Win32/lib/VC;../../rlog-1.4/win32/Release;../../dokany-0.7.4/Win32/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>../encfs/encfs.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>

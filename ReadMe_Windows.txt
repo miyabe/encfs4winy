@@ -9,18 +9,18 @@ I created a directory c:\work with files from git.
 
 Boost
 =====
-Download Boost libraries. I downloaded file boost_1_58_0.7z, extract in work directory
+Download Boost libraries. I downloaded file boost_1_59_0.7z, extract in work directory
 build (bootstrap and b2, real manual). At end of compile output should look like:
 
 The Boost C++ Libraries were successfully built!
 
 The following directory should be added to compiler include paths:
 
-    C:/work/boost_1_58_0
+    C:/work/boost_1_59_0
 
 The following directory should be added to linker library paths:
 
-    C:\work\boost_1_58_0\stage\lib
+    C:\work\boost_1_59_0\stage\lib
 
 
 OpenSSL

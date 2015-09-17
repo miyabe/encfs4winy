@@ -1,4 +1,4 @@
-!define VERSION "1.7.5_2"
+!define VERSION "1.7.5_3"
 
 !include LogicLib.nsh
 !include x64.nsh
@@ -29,6 +29,9 @@ UninstPage instfiles
     File ..\encfs\msvc\Release\encfs.exe
     File ..\encfs\msvc\Release\encfsw.exe
     File ..\encfs\msvc\Release\encfsctl.exe
+
+    File C:\OpenSSL-Win32\libeay32.dll
+    File C:\OpenSSL-Win32\ssleay32.dll
 
   SetOutPath $PROGRAMFILES32\EncFS\EncFS4Winy\encfs1
  
@@ -107,6 +110,8 @@ Section "Dokan Driver x86" section_x86_driver
     !insertmacro X86Driver "Win8.1"
   ${ElseIf} ${IsWin2012R2}
     !insertmacro X86Driver "Win8.1"
+  ${Else}
+    !insertmacro X86Driver "Win8.1"
   ${EndIf}
   !insertmacro DokanFiles
   !insertmacro StartDokan
@@ -124,6 +129,8 @@ Section "Dokan Driver x64" section_x64_driver
   ${ElseIf} ${IsWin8.1}
     !insertmacro X64Driver "Win8.1"
   ${ElseIf} ${IsWin2012R2}
+    !insertmacro X64Driver "Win8.1"
+  ${Else}
     !insertmacro X64Driver "Win8.1"
   ${EndIf}
   !insertmacro DokanFiles
