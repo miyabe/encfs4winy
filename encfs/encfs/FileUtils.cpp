@@ -116,6 +116,9 @@ struct ConfigInfo
 } ConfigFileMapping[] = {
 	{ ".encfs6.xml", Config_V6, "ENCFS6_CONFIG", readV6Config, writeV6Config,
 	V6SubVersion, 0 },
+	// add for using "Box Sync4"  by " Encroid Multi Cloud "(Android) --------------------
+	{"encfs6.xml", Config_V6, "ENCFS6_CONFIG", readV6Config, writeV6Config, 
+	V6SubVersion, 0 },
 	// backward compatible support for older versions
 	{ ".encfs5", Config_V5, "ENCFS5_CONFIG", readV5Config, writeV5Config,
 	V5SubVersion, V5SubVersionDefault },
