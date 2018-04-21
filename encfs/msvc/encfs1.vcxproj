@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -14,18 +14,18 @@
     <ProjectGuid>{7CDA8189-3B6D-40DC-9C77-1214D81388BA}</ProjectGuid>
     <RootNamespace>encfs1</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -54,7 +54,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;../intl;../../boost_1_58_0;../../dokany-0.7.4/dokan_fuse/include;../../rlog-1.4;C:/OpenSSL-Win32/include;../encfs;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;../intl;..\..\boost_1_59_0;C:\OpenSSL-Win32\include;..\..\encfs\encfs;..\..\encfs\msvc;..\..\rlog-1.4;..\..\dokany-0.7.4\dokan_fuse\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ENCFS_EXPORTS;RLOG_COMPONENT=encfs;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -65,7 +65,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>libeay32MDd.lib;ssleay32MDd.lib;rlog.lib;dokanfuse.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../boost_1_58_0/stage/lib;C:/OpenSSL-Win32/lib/VC;../../rlog-1.4/win32/Debug;../../dokany-0.7.4/Win32/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../boost_1_59_0/lib32-msvc-14.0;C:\OpenSSL-Win32\lib\VC;../../rlog-1.4/win32/Debug;..\..\dokany-0.7.4\Win32\Debug</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>../encfs/encfs.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -76,7 +76,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..;../intl;../../boost_1_59_0;../../dokany-0.7.4/dokan_fuse/include;../../rlog-1.4;C:/OpenSSL-Win32/include;../encfs;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;../intl;..\..\boost_1_59_0;C:\OpenSSL-Win32\include;..\..\encfs\encfs;..\..\encfs\msvc;..\..\rlog-1.4;..\..\dokany-0.7.4\dokan_fuse\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;ENCFS_EXPORTS;RLOG_COMPONENT=encfs;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -87,7 +87,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>libeay32MT.lib;ssleay32MT.lib;rlog.lib;dokanfuse.lib;dokan.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../boost_1_59_0/stage/lib;C:/OpenSSL-Win32/lib/VC;../../rlog-1.4/win32/Release;../../dokany-0.7.4/Win32/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../boost_1_59_0/lib32-msvc-14.0;C:\OpenSSL-Win32\lib\VC;../../rlog-1.4/win32/Debug;..\..\dokany-0.7.4\Win32\Debug</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>../encfs/encfs.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
